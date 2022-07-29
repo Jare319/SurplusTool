@@ -47,6 +47,8 @@ namespace SurplusTool
                 lbl_flex.Visible = true;
                 cbox_hdStatus.Visible = true;
                 tbox_specify.Visible = false;
+                lbl_hdSerial.Visible = true;
+                tbox_hdSerial.Visible = true;
             }
             else if (s == "Other (Please Specify)")
             {
@@ -54,12 +56,16 @@ namespace SurplusTool
                 lbl_flex.Visible = true;
                 cbox_hdStatus.Visible = false;
                 tbox_specify.Visible = true;
+                lbl_hdSerial.Visible = false;
+                tbox_hdSerial.Visible = false;
             }
             else
             {
                 lbl_flex.Visible = false;
                 cbox_hdStatus.Visible = false;
                 tbox_specify.Visible = false;
+                lbl_hdSerial.Visible = false;
+                tbox_hdSerial.Visible = false;
             }
         }
 
@@ -81,9 +87,12 @@ namespace SurplusTool
             cbox_type.Text = "";
             cbox_hdStatus.Text = "";
             tbox_specify.Text = "";
+            tbox_hdSerial.Text = "";
             lbl_flex.Visible = false;
             cbox_hdStatus.Visible = false;
             tbox_specify.Visible = false;
+            tbox_hdSerial.Visible = false;
+            lbl_hdSerial.Visible = false;
         }
 
         private void addItem()
@@ -94,15 +103,32 @@ namespace SurplusTool
                 tbox_serial.Text != "" &
                 cbox_type.Text != "")
             {
-                surplusList.Add(new SurplusItem(tbox_make.Text, tbox_model.Text, tbox_serial.Text, cbox_type.Text));
-                listBox1.Items.Add(tbox_make.Text + " " + tbox_model.Text + " " + cbox_type.Text + " S/N:" + tbox_serial.Text);
+                if (cbox_type.Text == "Other (Please Specify)" & tbox_specify.Text != "") //for non hard drive items
+                {
+                    surplusList.Add(new SurplusItem(tbox_make.Text, tbox_model.Text, tbox_serial.Text, tbox_specify.Text));
+                    listBox1.Items.Add(tbox_make.Text + " " + tbox_model.Text + " " + tbox_specify.Text + " S/N:" + tbox_serial.Text);
+                }
+                else if (cbox_hdStatus.Text != "" & tbox_hdSerial.Text != "")//for hard drive items
+                {
+                    surplusList.Add(new SurplusItem(tbox_make.Text, tbox_model.Text, tbox_serial.Text, cbox_type.Text, cbox_hdStatus.Text, tbox_hdSerial.Text));
+                    listBox1.Items.Add(tbox_make.Text + " " + tbox_model.Text + " " + cbox_type.Text + " S/N:" + tbox_serial.Text);
+                }
             }
             else
             {
                 System.Windows.Forms.MessageBox.Show("Please complete all fields");
             }
-            clearForm();
+            if (!chkbox_preserve.Checked)
+            {
+                clearForm();
+            }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
     public class SurplusItem
     {
@@ -111,6 +137,10 @@ namespace SurplusTool
         public String serial;
         public String type;
         public String hdStatus;
+        public String hdSerial;
+        public String rcCode;
+        public String condCode;
+        public Boolean hazard;
 
         public SurplusItem(String make, String model, String serial, String type)
         {
@@ -118,6 +148,15 @@ namespace SurplusTool
             this.model = model;
             this.serial = serial;
             this.type = type;
+        }
+        public SurplusItem(String make, String model, String serial, String type, String hdStatus, String hdSerial)
+        {
+            this.make = make;
+            this.model = model;
+            this.serial = serial;
+            this.type = type;
+            this.hdStatus = hdStatus;
+            this.hdSerial = hdSerial;
         }
     }
 }
