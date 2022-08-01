@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.chkbox_preserve = new System.Windows.Forms.CheckBox();
-            this.tbox_hdSerial = new System.Windows.Forms.TextBox();
-            this.lbl_hdSerial = new System.Windows.Forms.Label();
-            this.btn_add = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lbl_flex = new System.Windows.Forms.Label();
             this.lbl_type = new System.Windows.Forms.Label();
             this.cbox_type = new System.Windows.Forms.ComboBox();
@@ -46,10 +41,20 @@
             this.tbox_make = new System.Windows.Forms.TextBox();
             this.cbox_hdStatus = new System.Windows.Forms.ComboBox();
             this.tbox_specify = new System.Windows.Forms.TextBox();
+            this.chkbox_preserve = new System.Windows.Forms.CheckBox();
+            this.tbox_hdSerial = new System.Windows.Forms.TextBox();
+            this.lbl_hdSerial = new System.Windows.Forms.Label();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.contextMenuListItems = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteItemListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editItemListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenuListItems.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -83,69 +88,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 466;
             this.splitContainer1.TabIndex = 1;
-            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
-            // 
-            // chkbox_preserve
-            // 
-            this.chkbox_preserve.AutoSize = true;
-            this.chkbox_preserve.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkbox_preserve.Location = new System.Drawing.Point(352, 388);
-            this.chkbox_preserve.Name = "chkbox_preserve";
-            this.chkbox_preserve.Size = new System.Drawing.Size(98, 17);
-            this.chkbox_preserve.TabIndex = 13;
-            this.chkbox_preserve.Text = "Preserve Fields";
-            this.chkbox_preserve.UseVisualStyleBackColor = true;
-            // 
-            // tbox_hdSerial
-            // 
-            this.tbox_hdSerial.Location = new System.Drawing.Point(14, 220);
-            this.tbox_hdSerial.Name = "tbox_hdSerial";
-            this.tbox_hdSerial.Size = new System.Drawing.Size(436, 20);
-            this.tbox_hdSerial.TabIndex = 12;
-            this.tbox_hdSerial.Visible = false;
-            this.tbox_hdSerial.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // lbl_hdSerial
-            // 
-            this.lbl_hdSerial.AutoSize = true;
-            this.lbl_hdSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hdSerial.Location = new System.Drawing.Point(11, 202);
-            this.lbl_hdSerial.Name = "lbl_hdSerial";
-            this.lbl_hdSerial.Size = new System.Drawing.Size(151, 15);
-            this.lbl_hdSerial.TabIndex = 11;
-            this.lbl_hdSerial.Text = "Hard Drive Serial Number:";
-            this.lbl_hdSerial.Visible = false;
-            // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(387, 411);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(63, 27);
-            this.btn_add.TabIndex = 2;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_clear.Location = new System.Drawing.Point(11, 411);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(73, 27);
-            this.btn_clear.TabIndex = 1;
-            this.btn_clear.Text = "Clear Form";
-            this.btn_clear.UseVisualStyleBackColor = false;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(330, 450);
-            this.listBox1.TabIndex = 1;
             // 
             // lbl_flex
             // 
@@ -256,6 +198,89 @@
             this.tbox_specify.TabIndex = 23;
             this.tbox_specify.Visible = false;
             // 
+            // chkbox_preserve
+            // 
+            this.chkbox_preserve.AutoSize = true;
+            this.chkbox_preserve.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkbox_preserve.Location = new System.Drawing.Point(352, 388);
+            this.chkbox_preserve.Name = "chkbox_preserve";
+            this.chkbox_preserve.Size = new System.Drawing.Size(98, 17);
+            this.chkbox_preserve.TabIndex = 13;
+            this.chkbox_preserve.Text = "Preserve Fields";
+            this.chkbox_preserve.UseVisualStyleBackColor = true;
+            // 
+            // tbox_hdSerial
+            // 
+            this.tbox_hdSerial.Location = new System.Drawing.Point(14, 220);
+            this.tbox_hdSerial.Name = "tbox_hdSerial";
+            this.tbox_hdSerial.Size = new System.Drawing.Size(436, 20);
+            this.tbox_hdSerial.TabIndex = 12;
+            this.tbox_hdSerial.Visible = false;
+            // 
+            // lbl_hdSerial
+            // 
+            this.lbl_hdSerial.AutoSize = true;
+            this.lbl_hdSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hdSerial.Location = new System.Drawing.Point(11, 202);
+            this.lbl_hdSerial.Name = "lbl_hdSerial";
+            this.lbl_hdSerial.Size = new System.Drawing.Size(151, 15);
+            this.lbl_hdSerial.TabIndex = 11;
+            this.lbl_hdSerial.Text = "Hard Drive Serial Number:";
+            this.lbl_hdSerial.Visible = false;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(387, 411);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(63, 27);
+            this.btn_add.TabIndex = 2;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_clear.Location = new System.Drawing.Point(11, 411);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(73, 27);
+            this.btn_clear.TabIndex = 1;
+            this.btn_clear.Text = "Clear Form";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.ContextMenuStrip = this.contextMenuListItems;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(330, 450);
+            this.listBox1.TabIndex = 1;
+            // 
+            // contextMenuListItems
+            // 
+            this.contextMenuListItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteItemListMenuItem,
+            this.editItemListMenuItem});
+            this.contextMenuListItems.Name = "contextMenuStrip2";
+            this.contextMenuListItems.Size = new System.Drawing.Size(135, 48);
+            // 
+            // deleteItemListMenuItem
+            // 
+            this.deleteItemListMenuItem.Name = "deleteItemListMenuItem";
+            this.deleteItemListMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.deleteItemListMenuItem.Text = "Delete Item";
+            this.deleteItemListMenuItem.Click += new System.EventHandler(this.deleteItemListMenuItem_Click);
+            // 
+            // editItemListMenuItem
+            // 
+            this.editItemListMenuItem.Name = "editItemListMenuItem";
+            this.editItemListMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.editItemListMenuItem.Text = "Edit Item";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +295,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenuListItems.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -293,6 +319,9 @@
         private System.Windows.Forms.TextBox tbox_make;
         private System.Windows.Forms.ComboBox cbox_hdStatus;
         private System.Windows.Forms.TextBox tbox_specify;
+        private System.Windows.Forms.ContextMenuStrip contextMenuListItems;
+        private System.Windows.Forms.ToolStripMenuItem deleteItemListMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editItemListMenuItem;
     }
 }
 

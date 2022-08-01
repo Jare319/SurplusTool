@@ -23,21 +23,6 @@ namespace SurplusTool
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbox_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             String s = cbox_type.Text;
@@ -97,6 +82,7 @@ namespace SurplusTool
 
         private void addItem()
         {
+            Boolean add = false;
             if (
                 tbox_make.Text != "" &
                 tbox_model.Text != "" &
@@ -105,31 +91,44 @@ namespace SurplusTool
             {
                 if (cbox_type.Text == "Other (Please Specify)" & tbox_specify.Text != "") //for non hard drive items
                 {
+                    add = true;
                     surplusList.Add(new SurplusItem(tbox_make.Text, tbox_model.Text, tbox_serial.Text, tbox_specify.Text));
                     listBox1.Items.Add(tbox_make.Text + " " + tbox_model.Text + " " + tbox_specify.Text + " S/N:" + tbox_serial.Text);
                 }
                 else if (cbox_hdStatus.Text != "" & tbox_hdSerial.Text != "")//for hard drive items
                 {
+                    add = true;
                     surplusList.Add(new SurplusItem(tbox_make.Text, tbox_model.Text, tbox_serial.Text, cbox_type.Text, cbox_hdStatus.Text, tbox_hdSerial.Text));
                     listBox1.Items.Add(tbox_make.Text + " " + tbox_model.Text + " " + cbox_type.Text + " S/N:" + tbox_serial.Text);
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Please complete all fields");
                 }
             }
             else
             {
                 System.Windows.Forms.MessageBox.Show("Please complete all fields");
             }
-            if (!chkbox_preserve.Checked)
+            if (!chkbox_preserve.Checked & add)
             {
                 clearForm();
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void deleteItemListMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (listBox1.SelectedIndex != -1)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Please select an item first");
+            }
         }
-
     }
+
     public class SurplusItem
     {
         public String make;
