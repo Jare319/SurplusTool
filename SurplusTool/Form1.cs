@@ -127,6 +127,12 @@ namespace SurplusTool
                 System.Windows.Forms.MessageBox.Show("Please select an item first");
             }
         }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+            //Export(saveFileDialog1.);
+        }
     }
 
     public class SurplusItem
@@ -156,6 +162,11 @@ namespace SurplusTool
             this.type = type;
             this.hdStatus = hdStatus;
             this.hdSerial = hdSerial;
+        }
+
+        public Export()
+        {
+
         }
     }
 }

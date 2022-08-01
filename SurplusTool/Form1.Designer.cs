@@ -46,14 +46,20 @@
             this.lbl_hdSerial = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuListItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteItemListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editItemListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.contextMenuListItems.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +87,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.lbl_hdSerial);
             this.splitContainer1.Panel1.Controls.Add(this.btn_add);
             this.splitContainer1.Panel1.Controls.Add(this.btn_clear);
+            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
             // splitContainer1.Panel2
             // 
@@ -144,7 +151,7 @@
             // 
             // tbox_model
             // 
-            this.tbox_model.Location = new System.Drawing.Point(242, 31);
+            this.tbox_model.Location = new System.Drawing.Point(242, 45);
             this.tbox_model.Name = "tbox_model";
             this.tbox_model.Size = new System.Drawing.Size(208, 20);
             this.tbox_model.TabIndex = 17;
@@ -153,7 +160,7 @@
             // 
             this.lbl_model.AutoSize = true;
             this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(239, 13);
+            this.lbl_model.Location = new System.Drawing.Point(239, 27);
             this.lbl_model.Name = "lbl_model";
             this.lbl_model.Size = new System.Drawing.Size(45, 15);
             this.lbl_model.TabIndex = 16;
@@ -163,7 +170,7 @@
             // 
             this.lbl_make.AutoSize = true;
             this.lbl_make.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_make.Location = new System.Drawing.Point(11, 13);
+            this.lbl_make.Location = new System.Drawing.Point(11, 27);
             this.lbl_make.Name = "lbl_make";
             this.lbl_make.Size = new System.Drawing.Size(41, 15);
             this.lbl_make.TabIndex = 15;
@@ -171,7 +178,7 @@
             // 
             // tbox_make
             // 
-            this.tbox_make.Location = new System.Drawing.Point(14, 31);
+            this.tbox_make.Location = new System.Drawing.Point(14, 45);
             this.tbox_make.Name = "tbox_make";
             this.tbox_make.Size = new System.Drawing.Size(208, 20);
             this.tbox_make.TabIndex = 14;
@@ -249,6 +256,46 @@
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(466, 24);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.lineToolStripMenuItem,
+            this.exportToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // lineToolStripMenuItem
+            // 
+            this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
+            this.lineToolStripMenuItem.Size = new System.Drawing.Size(177, 6);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
             // listBox1
             // 
             this.listBox1.ContextMenuStrip = this.contextMenuListItems;
@@ -263,10 +310,9 @@
             // contextMenuListItems
             // 
             this.contextMenuListItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteItemListMenuItem,
-            this.editItemListMenuItem});
+            this.deleteItemListMenuItem});
             this.contextMenuListItems.Name = "contextMenuStrip2";
-            this.contextMenuListItems.Size = new System.Drawing.Size(135, 48);
+            this.contextMenuListItems.Size = new System.Drawing.Size(135, 26);
             // 
             // deleteItemListMenuItem
             // 
@@ -275,18 +321,13 @@
             this.deleteItemListMenuItem.Text = "Delete Item";
             this.deleteItemListMenuItem.Click += new System.EventHandler(this.deleteItemListMenuItem_Click);
             // 
-            // editItemListMenuItem
-            // 
-            this.editItemListMenuItem.Name = "editItemListMenuItem";
-            this.editItemListMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.editItemListMenuItem.Text = "Edit Item";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "OSU Surplus Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -295,6 +336,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.contextMenuListItems.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -321,7 +364,12 @@
         private System.Windows.Forms.TextBox tbox_specify;
         private System.Windows.Forms.ContextMenuStrip contextMenuListItems;
         private System.Windows.Forms.ToolStripMenuItem deleteItemListMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editItemListMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator lineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
