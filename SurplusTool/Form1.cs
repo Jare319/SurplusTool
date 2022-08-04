@@ -164,7 +164,7 @@ namespace SurplusTool
             this.hdSerial = hdSerial;
         }
 
-        public Export()
+        public void Export()
         {
 
         }

@@ -48,6 +48,8 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +73,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer1.Panel1.Controls.Add(this.lbl_flex);
             this.splitContainer1.Panel1.Controls.Add(this.lbl_type);
             this.splitContainer1.Panel1.Controls.Add(this.cbox_type);
@@ -100,7 +103,7 @@
             // 
             this.lbl_flex.AutoSize = true;
             this.lbl_flex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_flex.Location = new System.Drawing.Point(239, 140);
+            this.lbl_flex.Location = new System.Drawing.Point(239, 150);
             this.lbl_flex.Name = "lbl_flex";
             this.lbl_flex.Size = new System.Drawing.Size(105, 15);
             this.lbl_flex.TabIndex = 22;
@@ -111,7 +114,7 @@
             // 
             this.lbl_type.AutoSize = true;
             this.lbl_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_type.Location = new System.Drawing.Point(11, 140);
+            this.lbl_type.Location = new System.Drawing.Point(11, 150);
             this.lbl_type.Name = "lbl_type";
             this.lbl_type.Size = new System.Drawing.Size(112, 15);
             this.lbl_type.TabIndex = 21;
@@ -126,7 +129,7 @@
             "Tablet",
             "Printer/Fax/Scanner/Copier",
             "Other (Please Specify)"});
-            this.cbox_type.Location = new System.Drawing.Point(14, 158);
+            this.cbox_type.Location = new System.Drawing.Point(14, 168);
             this.cbox_type.Name = "cbox_type";
             this.cbox_type.Size = new System.Drawing.Size(208, 21);
             this.cbox_type.TabIndex = 20;
@@ -134,7 +137,7 @@
             // 
             // tbox_serial
             // 
-            this.tbox_serial.Location = new System.Drawing.Point(14, 96);
+            this.tbox_serial.Location = new System.Drawing.Point(14, 106);
             this.tbox_serial.Name = "tbox_serial";
             this.tbox_serial.Size = new System.Drawing.Size(436, 20);
             this.tbox_serial.TabIndex = 19;
@@ -143,7 +146,7 @@
             // 
             this.lbl_serial.AutoSize = true;
             this.lbl_serial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_serial.Location = new System.Drawing.Point(11, 78);
+            this.lbl_serial.Location = new System.Drawing.Point(11, 88);
             this.lbl_serial.Name = "lbl_serial";
             this.lbl_serial.Size = new System.Drawing.Size(90, 15);
             this.lbl_serial.TabIndex = 18;
@@ -151,7 +154,7 @@
             // 
             // tbox_model
             // 
-            this.tbox_model.Location = new System.Drawing.Point(242, 45);
+            this.tbox_model.Location = new System.Drawing.Point(242, 55);
             this.tbox_model.Name = "tbox_model";
             this.tbox_model.Size = new System.Drawing.Size(208, 20);
             this.tbox_model.TabIndex = 17;
@@ -160,7 +163,7 @@
             // 
             this.lbl_model.AutoSize = true;
             this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(239, 27);
+            this.lbl_model.Location = new System.Drawing.Point(239, 37);
             this.lbl_model.Name = "lbl_model";
             this.lbl_model.Size = new System.Drawing.Size(45, 15);
             this.lbl_model.TabIndex = 16;
@@ -170,7 +173,7 @@
             // 
             this.lbl_make.AutoSize = true;
             this.lbl_make.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_make.Location = new System.Drawing.Point(11, 27);
+            this.lbl_make.Location = new System.Drawing.Point(11, 37);
             this.lbl_make.Name = "lbl_make";
             this.lbl_make.Size = new System.Drawing.Size(41, 15);
             this.lbl_make.TabIndex = 15;
@@ -178,7 +181,7 @@
             // 
             // tbox_make
             // 
-            this.tbox_make.Location = new System.Drawing.Point(14, 45);
+            this.tbox_make.Location = new System.Drawing.Point(14, 55);
             this.tbox_make.Name = "tbox_make";
             this.tbox_make.Size = new System.Drawing.Size(208, 20);
             this.tbox_make.TabIndex = 14;
@@ -191,7 +194,7 @@
             "Destroyed / Will be destroyed (Recommended)",
             "Sanitized & Reinstalled (Interdepartmental Transfer Only)",
             "Removed & Held by Dept."});
-            this.cbox_hdStatus.Location = new System.Drawing.Point(242, 157);
+            this.cbox_hdStatus.Location = new System.Drawing.Point(242, 167);
             this.cbox_hdStatus.Name = "cbox_hdStatus";
             this.cbox_hdStatus.Size = new System.Drawing.Size(208, 21);
             this.cbox_hdStatus.TabIndex = 24;
@@ -199,7 +202,7 @@
             // 
             // tbox_specify
             // 
-            this.tbox_specify.Location = new System.Drawing.Point(242, 158);
+            this.tbox_specify.Location = new System.Drawing.Point(242, 168);
             this.tbox_specify.Name = "tbox_specify";
             this.tbox_specify.Size = new System.Drawing.Size(208, 20);
             this.tbox_specify.TabIndex = 23;
@@ -218,7 +221,7 @@
             // 
             // tbox_hdSerial
             // 
-            this.tbox_hdSerial.Location = new System.Drawing.Point(14, 220);
+            this.tbox_hdSerial.Location = new System.Drawing.Point(14, 230);
             this.tbox_hdSerial.Name = "tbox_hdSerial";
             this.tbox_hdSerial.Size = new System.Drawing.Size(436, 20);
             this.tbox_hdSerial.TabIndex = 12;
@@ -228,7 +231,7 @@
             // 
             this.lbl_hdSerial.AutoSize = true;
             this.lbl_hdSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hdSerial.Location = new System.Drawing.Point(11, 202);
+            this.lbl_hdSerial.Location = new System.Drawing.Point(11, 212);
             this.lbl_hdSerial.Name = "lbl_hdSerial";
             this.lbl_hdSerial.Size = new System.Drawing.Size(151, 15);
             this.lbl_hdSerial.TabIndex = 11;
@@ -258,19 +261,23 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(466, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.lineToolStripMenuItem,
             this.exportToolStripMenuItem});
@@ -278,21 +285,33 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // lineToolStripMenuItem
             // 
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
-            this.lineToolStripMenuItem.Size = new System.Drawing.Size(177, 6);
+            this.lineToolStripMenuItem.Size = new System.Drawing.Size(105, 6);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
@@ -364,12 +383,14 @@
         private System.Windows.Forms.TextBox tbox_specify;
         private System.Windows.Forms.ContextMenuStrip contextMenuListItems;
         private System.Windows.Forms.ToolStripMenuItem deleteItemListMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator lineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
